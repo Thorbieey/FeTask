@@ -1,0 +1,42 @@
+.VisibleSectionA{
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+    transition: opacity 0.7s;
+}
+
+.inVisibleSectionA{
+    opacity: 0;
+    height: 0;
+    width: 0;
+    transition: opacity 0.7s;
+    margin: 0 !important;
+}
+
+.outsideView{
+    transform: translateX(-200%);
+    transform: translateY(-200%);
+    transition: transform 0.5s;
+}
+
+.inView{
+    transform: translateX(0);
+    transform: translateY(0);
+    transition: transform 0.5s;
+}
+
+.visibleButtonA{
+    width: fit-content;
+    height: fit-content;
+    opacity: 1;
+
+
+}
+
+.invisibleButtonA{
+    width: 0;
+    padding: 0;
+    margin: 0;
+    height: 0;
+    opacity: 0;
+}
