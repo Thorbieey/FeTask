@@ -278,7 +278,7 @@ const SignUp = () => {
           <img src="/Icon-pending.svg" alt="Pending Icon" />
         </div>
         <span  className='text-2xl font-medium text-[#FF9900] leading-8 '>Pending</span>
-        <span className='text-sm  leading-[18px] text-[#1A1619] mt-3'>Your registration is awaiting approval from our partnership team</span>
+        <span  className='text-sm my-family-poppins  leading-[18px] text-[#1A1619] mt-3'>Your registration is awaiting approval from our partnership team</span>
         <Button onClick={handleClose} className='w-full text-sm font-medium leading-4 rounded py-4 mt-6 h-fit bg-[#039BF0] '>Done</Button>
       </DialogContent>
     </Dialog>

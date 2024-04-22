@@ -1,7 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:wght@700&family=Poppins:wght@300;400;500;600&display=swap');
 @tailwind base;
   @tailwind components;
   @tailwind utilities;
-
   @layer base {
     :root {
       --background: 0 0% 100%;
@@ -105,4 +105,24 @@
 
   .icon-color{
     stroke: #6B7280;
+  }
+
+  .my-text-poppins {
+    font-family: "Poppins", sans-serif;
+  } 
+
+  button{
+    font-family: "Rubik", sans-serif;
+  }
+  .my-text-inter {
+    font-family: "Inter", sans-serif;
+  }  
+
+  .my-text-rubik {
+    font-family: "Rubik", sans-serif;
+  }  
+
+  body{
+  font-family: "Inter", sans-serif;
+
   }
