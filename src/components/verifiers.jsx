@@ -403,14 +403,21 @@ const Verifiers = () => {
     const [FetchedData, setFetchedData] = useState([])
     const [isLoading, setIsLoading] = useState(false)
     const [filter, setFilter] = useState('All')
+    const [filterValue, setFilterValue] = useState("")
     const handleSearch = (e) => {
         const value = e.target.value
         if(!value){
             setFetchedData(trialData)
+            setFilter("All")
             return
         }
+
         const filterd = trialData.filter((item) => {
-            return item.FirstName.toLowerCase().includes(value.toLowerCase()) || item.LastName.toLowerCase().includes(value.toLowerCase()) || item.PhoneNumber.toLowerCase().includes(value.toLowerCase()) || item.Location.toLowerCase().includes(value.toLowerCase())
+          if(filterValue.length > 0) {
+            return (item.FirstName.toLowerCase().includes(value.toLowerCase()) || item.LastName.toLowerCase().includes(value.toLowerCase()) || item.PhoneNumber.toLowerCase().includes(value.toLowerCase()) || item.Location.toLowerCase().includes(value.toLowerCase())) && item.Status === filterValue
+          }else{
+            return item.FirstName.toLowerCase().includes(value.toLowerCase()) || item.LastName.toLowerCase().includes(value.toLowerCase()) || item.PhoneNumber.toLowerCase().includes(value.toLowerCase()) || item.Location.toLowerCase().includes(value.toLowerCase()) 
+          }
         })
         setFetchedData(filterd)
     }
@@ -418,11 +425,14 @@ const Verifiers = () => {
         if(value === 'All'){
             setFetchedData(trialData)
             setFilter(value)
+            setFilterValue("")
+
             return
         }
         const filterd = trialData.filter((item) => {
             const type = value === 'Active' ? 'Active Verifiers' : value === 'Deactivated' ? 'Deactivated Verifiers' : value === 'Awaiting approval' ? 'Pending Verifiers' : 'All' 
             setFilter(type)
+            setFilterValue(value)
             return item.Status === value
         })
         setFetchedData(filterd)
